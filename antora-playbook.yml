@@ -1,0 +1,25 @@
+site:
+  title: Docs as Code
+  start_page: arc42-template::index.adoc
+content:
+  sources:
+    - url: ../arc42
+      branches: HEAD
+    - url: ../order-card
+      branches: HEAD
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
+asciidoc:
+  attributes:
+    optimize-content: true
+    kroki-fetch-diagram: true
+  extensions:
+    - asciidoctor-kroki
+output:
+  destinations:
+    - provider: fs
+    - provider: antora-confluence
+      confluence-api: https://xxxx.atlassian.net
+      confluence-space: xxxxx

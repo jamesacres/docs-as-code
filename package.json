@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "build": "SKIP_CONFLUENCE=1 npx antora --fetch antora-playbook.yml",
+    "publish": "source .env && CONFLUENCE_USERNAME=$CONFLUENCE_USERNAME CONFLUENCE_PASSWORD=$CONFLUENCE_PASSWORD npx antora --fetch antora-playbook.yml",
+    "view": "npm run build && open build/site/index.html"
+  },
+  "devDependencies": {
+    "antora": "3.1.7",
+    "antora-confluence": "^0.3.0"
+  },
+  "dependencies": {
+    "asciidoctor": "^3.0.4",
+    "asciidoctor-kroki": "^0.18.1"
+  }
+}
